@@ -18,9 +18,9 @@ const Card = styled.li`
 const Pokemon = ({ pokemon }) => {
   return (
     <Card>
-      <Image alt="a" />
+      <Image src={pokemon.sprites.front_default} alt={pokemon.name} />
       <div>
-        <h2>pokemon</h2>
+        <h2>{pokemon.name}</h2>
       </div>
     </Card>
   );
