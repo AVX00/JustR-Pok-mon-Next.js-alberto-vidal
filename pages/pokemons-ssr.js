@@ -3,7 +3,7 @@ import PokemonsList from "../components/Pokemons/Pokemons";
 const PokemonSSR = ({ pokemons }) => {
   return (
     <>
-      <h1>pokemon-ssg</h1>
+      <h1>pokemon-ssr</h1>
       <PokemonsList pokemons={pokemons} />
     </>
   );

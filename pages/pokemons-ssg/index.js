@@ -1,4 +1,4 @@
-import PokemonsList from "../components/Pokemons/Pokemons";
+import PokemonsList from "../../components/Pokemons/Pokemons";
 
 const PokemonsSSG = ({ pokemons }) => {
   return (
@@ -11,8 +11,8 @@ const PokemonsSSG = ({ pokemons }) => {
 export default PokemonsSSG;
 
 export const getStaticProps = async () => {
-  const result = await fetch(process.env.NEXT_PUBLIC_FAVS);
-  const pokemons = await (await result).json();
+  const response = await fetch(process.env.NEXT_PUBLIC_FAVS);
+  const pokemons = await (await response).json();
 
   return {
     props: {
