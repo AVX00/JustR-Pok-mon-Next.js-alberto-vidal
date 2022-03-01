@@ -1,11 +1,5 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
-import Pokemon from "../components/Pokemon/Pokemon";
-
-const CardContainer = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-`;
+import PokemonsList from "../components/Pokemons/Pokemons";
 
 const Pokemons = () => {
   const [pokemons, setPokemons] = useState(null);
@@ -25,12 +19,7 @@ const Pokemons = () => {
   return (
     <>
       <h1>pokemons</h1>
-      <CardContainer>
-        {pokemons &&
-          pokemons.map((pokemon) => (
-            <Pokemon key={pokemon.name} pokemon={pokemon} />
-          ))}
-      </CardContainer>
+      <PokemonsList pokemons={pokemons} />
     </>
   );
 };
