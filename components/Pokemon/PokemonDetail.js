@@ -1,19 +1,17 @@
 import styled from "styled-components";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 const Card = styled.li`
-  cursor: pointer;
   position: relative;
-  height: 400px;
-  width: 280px;
+  height: 100%;
+  width: 100%;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background-color: #222;
-  margin: 20px;
+  margin: 30px;
   & img {
     position: absolute;
     top: 0;
@@ -25,20 +23,15 @@ const Card = styled.li`
     height: 50%;
   }
   & .image {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     position: relative;
   }
 `;
 
-const Pokemon = ({ pokemon }) => {
-  const router = useRouter();
-  const onClick = (id) => () => {
-    console.log(`${router.pathname}/${id}`);
-    router.push(`${router.pathname}/${id}`);
-  };
+const PokemonDetail = ({ pokemon }) => {
   return (
-    <Card onClick={onClick(pokemon.id)}>
+    <Card>
       <div className="image">
         <Image
           src={pokemon.sprites.front_default}
@@ -53,4 +46,4 @@ const Pokemon = ({ pokemon }) => {
   );
 };
 
-export default Pokemon;
+export default PokemonDetail;
