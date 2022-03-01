@@ -21,6 +21,7 @@ const Pokemons = () => {
       setPokemons(pokemons);
     })();
   }, []);
+
   return (
     <>
       <h1>pokemons</h1>
