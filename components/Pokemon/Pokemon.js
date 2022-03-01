@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const Card = styled.li`
+  cursor: pointer;
   position: relative;
   height: 400px;
   width: 280px;
@@ -30,8 +32,13 @@ const Card = styled.li`
 `;
 
 const Pokemon = ({ pokemon }) => {
+  const router = useRouter();
+  const onClick = (id) => () => {
+    console.log(`${router.pathname}/${id}`);
+    router.push(`${router.pathname}/${id}`);
+  };
   return (
-    <Card>
+    <Card onClick={onClick(pokemon.id)}>
       <div className="image">
         <Image
           src={pokemon.sprites.front_default}
