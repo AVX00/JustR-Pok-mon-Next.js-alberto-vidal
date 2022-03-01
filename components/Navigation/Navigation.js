@@ -5,11 +5,17 @@ const Header = styled.header`
   height: 60px;
   background-color: #222;
   width: 100vw;
-  display: flex;
   margin: 0;
   padding: 0;
-  align-items: center;
-  justify-content: space-evenly;
+  & nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: inherit;
+    height: inherit;
+    margin: 0;
+    padding: 0;
+  }
   & a {
     color: #f0f0f0;
     text-decoration: none;
