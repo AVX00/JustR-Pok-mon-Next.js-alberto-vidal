@@ -1,10 +1,16 @@
+import { useRouter } from "next/router";
 import PokemonDetail from "../../components/Pokemon/PokemonDetail";
 
 const PokemonISR = ({ pokemon }) => {
+  const router = useRouter();
   return (
     <>
       <h1>pokemon-isr</h1>
-      <PokemonDetail pokemon={pokemon} />
+      {router.isFallback ? (
+        <h2>loading</h2>
+      ) : (
+        <PokemonDetail pokemon={pokemon} />
+      )}
     </>
   );
 };
